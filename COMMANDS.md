@@ -64,4 +64,12 @@ apt-get install python-certbot-nginx
 
 # See official documentation: https://certbot.eff.org/lets-encrypt/ubuntutrusty-nginx
 # Only works when site is online
+
+# Setup domain for user
+adduser <username>
+mkdir /var/www/<username>/web/<domain>
+mkdir /home/<username>/web
+ln -s /var/www/<username>/web/<domain> /home/<username>/web/<domain>
+chgrp -R www-data /var/www
+chown -R 0775 /var/www/<username>
 ```
